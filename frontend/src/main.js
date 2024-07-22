@@ -1,5 +1,12 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import { createApp, h } from 'vue';
+import App from './App.vue';
+import { provideStore } from './composables/useStore';
 
-createApp(App).mount('#app')
+const app = createApp({
+  setup() {
+    provideStore();
+  },
+  render: () => h(App)
+});
+
+app.mount('#app');
