@@ -53,7 +53,7 @@ function submitForm() {
       alert("Data de nascimento inválida.");
       return;
     }
-  } else if (userData.personType.value === 'PJ') {
+  } else if (userData.value.personType === 'PJ') {
     if (!validateCNPJ(userData.value.cnpj)) {
       alert("CNPJ inválido.");
       return;
