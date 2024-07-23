@@ -38,11 +38,32 @@
 <script setup>
 import { toRefs } from 'vue';
 import { useStore } from '../composables/useStore';
+import { validateCPF, validateDate, validateCNPJ } from '../utils/validations';
 
 const store = useStore();
 const { userData } = toRefs(store.state);
 
 function submitForm() {
+  if (userData.value.personType === "PF") {
+    if (!validateCPF(userData.value.cpf)) {
+      alert("CPF inválido.");
+      return;
+    }
+    if (!validateDate(userData.value.birthdate)) {
+      alert("Data de nascimento inválida.");
+      return;
+    }
+  } else if (userData.personType.value === 'PJ') {
+    if (!validateCNPJ(userData.value.cnpj)) {
+      alert("CNPJ inválido.");
+      return;
+    }
+    if (!validateDate(userData.value.openingDate)) {
+      alert("Data de abertura inválida. A data deve ser anterior ao dia atual e não mais do que 100 anos atrás.");
+      return;
+    }
+  }
+
   store.nextStep();
 }
 function goBack() {
