@@ -28,7 +28,7 @@
       <input type="text" id="phone" v-model="userData.phone" required />
     </div>
 
-    <div class="buttonWrapper">
+    <div class="wrapper">
       <button type="button" @click="goBack" class="outLinedBtn">Voltar</button>
       <button type="submit" class="btn">Continuar</button>
     </div>

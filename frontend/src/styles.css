@@ -27,7 +27,8 @@ form {
   gap: 10px;
 }
 
-input, select {
+input,
+select {
   border-radius: 8px;
   border: 1px solid #000;
   padding: 10px;
@@ -37,13 +38,14 @@ label {
   margin-bottom: 5px;
 }
 
-.buttonWrapper {
+.wrapper {
   display: flex;
   justify-content: space-around;
   gap: 20px;
 }
 
-.btn, .outLinedBtn {
+.btn,
+.outLinedBtn {
   border-radius: 8px;
   padding: 10px 0px;
   width: 100%;
@@ -51,29 +53,30 @@ label {
   cursor: pointer;
 }
 
-/* Solid Button Styling */
 .btn {
   background-color: #ff9900;
   color: #fff;
   border: none;
 }
 
-/* Outlined Button Styling */
 .outLinedBtn {
   background-color: inherit;
   color: #ff9900;
   border: 1px solid #ff9900;
 }
 
-/* Headings Styling */
 h1 {
   padding: 10px 0px 20px;
   margin: 0;
 }
 
-/* Conditional Styles for Different Sections */
-.form, fieldset {
+.form {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.radioWrapper {
+  width: 100%;
+  gap: 5px;
 }

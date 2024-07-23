@@ -33,7 +33,7 @@
       <label>Senha:</label>
       <input type="password" v-model="userData.password" readonly />
 
-    <div class="buttonWrapper">
+    <div class="wrapper">
       <button type="button" @click="goBack" class="btn">Voltar</button>
       <button type="button" @click="finalizeRegistration" class="outLinedBtn">Finalizar Cadastro</button>
     </div>

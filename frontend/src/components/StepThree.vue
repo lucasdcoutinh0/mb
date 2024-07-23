@@ -4,7 +4,7 @@
       <label for="password">Senha:</label>
       <input type="password" id="password" v-model="password" required />
 
-      <div class="buttonWrapper">
+      <div class="wrapper">
         <button type="button" @click="goBack" class="outLinedBtn">Voltar</button>
       <button type="submit" class="btn">Continuar</button>
       </div>
