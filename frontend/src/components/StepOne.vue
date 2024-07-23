@@ -6,12 +6,12 @@
 
     <div class="wrapper">
       <div class="radioWrapper">
-        <input type="radio" id="PF" value="PF" v-model="userData.personType" checked />
+        <input type="radio" name="personType" id="PF" value="PF" @change="updatePersonType" />
         <label for="PF">Pessoa Física</label>
       </div>
 
       <div class="radioWrapper">
-        <input type="radio" id="PJ" value="PJ" v-model="userData.personType" />
+        <input type="radio" name="personType" id="PJ" value="PJ" @change="updatePersonType" />
         <label for="PJ">Pessoa Jurídica</label>
       </div>
     </div>
@@ -27,11 +27,15 @@ import { useStore } from '../composables/useStore';
 const store = useStore();
 const { userData } = toRefs(store.state);
 
-if (!userData.personType) {
-  userData.personType = 'PF';
+function submitForm() {
+  if(!userData.value.personType){
+    alert("Selecione Pessoa Física ou Jurídica para continuar")
+    return
+  }
+  store.nextStep()
 }
 
-function submitForm() {
-  store.nextStep();
+function updatePersonType(event) {
+  userData.value.personType = event.target.value;
 }
 </script>

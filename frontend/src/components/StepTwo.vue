@@ -45,7 +45,6 @@ const { userData } = toRefs(store.state);
 function submitForm() {
   store.nextStep();
 }
-
 function goBack() {
   store.previousStep();
 }
