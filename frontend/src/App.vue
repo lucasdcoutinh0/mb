@@ -1,5 +1,6 @@
-<template>
-  <component :is="currentStepComponent" />
+<template class="template">
+      <div>Etapa <span class="currentStep">{{ currentStep + 1 }}</span> de {{ totalSteps }}</div>
+    <component :is="currentStepComponent" />
 </template>
 
 <script setup>
@@ -13,4 +14,6 @@ import { useStore } from './composables/useStore';
 const store = useStore();
 const stepComponents = [StepOne, StepTwo, StepThree, StepFour];
 const currentStepComponent = computed(() => stepComponents[store.state.step]);
+const currentStep = computed(() => store.state.step);
+const totalSteps = stepComponents.length;
 </script>

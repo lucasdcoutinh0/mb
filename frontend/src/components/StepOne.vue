@@ -11,7 +11,7 @@
       <option value="PJ">Pessoa Jurídica</option>
     </select>
 
-    <button type="submit">Continuar</button>
+    <button type="submit" class="btn">Continuar</button>
   </form>
 </template>
 

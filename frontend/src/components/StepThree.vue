@@ -1,14 +1,14 @@
 <template>
-  <div>
-    <h1>Passo 3: Defina Sua Senha</h1>
+    <h1 >Senha de acesso</h1>
     <form @submit.prevent="submitForm">
       <label for="password">Senha:</label>
       <input type="password" id="password" v-model="password" required />
 
-      <button type="button" @click="goBack">Voltar</button>
-      <button type="submit">Finalizar Cadastro</button>
+      <div class="buttonWrapper">
+        <button type="button" @click="goBack" class="outLinedBtn">Voltar</button>
+      <button type="submit" class="btn">Continuar</button>
+      </div>
     </form>
-  </div>
 </template>
 
 <script setup>
@@ -20,7 +20,6 @@ const password = ref('');
 
 function submitForm() {
   store.updateField('password', password.value);
-  alert('Cadastro concluído com sucesso!');
   store.nextStep();
 }
 
